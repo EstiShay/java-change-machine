@@ -17,9 +17,11 @@ public class App {
             Map<String, Object> data = new HashMap<String, Object>();
             String input = request.queryParams("amount");
             Float cash = Float.parseFloat(input);
+            boolean tooHigh = (cash > 8.20);
             ChangeMachine changeMachine = new ChangeMachine();
             String output = changeMachine.makeChange(cash);
             data.put("output", output);
+            data.put("tooHigh", tooHigh);
             return new ModelAndView(data, "change.hbs");
 
         }, new HandlebarsTemplateEngine());

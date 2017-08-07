@@ -1,7 +1,11 @@
 {{#partial "content"}}
 
     <h1>Your Change:</h1>
-    <p>{{output}}</p>
+    {{#if tooHigh}}
+        <p>Sorry, we don't have enough coins to make change for that amount.</p>
+    {{else}}
+        <p>{{output}}</p>
+    {{/if}}
 
 {{/partial}}
 
