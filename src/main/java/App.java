@@ -19,7 +19,7 @@ public class App {
             Float cash = Float.parseFloat(input);
             ChangeMachine changeMachine = new ChangeMachine();
             String output = changeMachine.makeChange(cash);
-            data.put("amount", output);
+            data.put("output", output);
             return new ModelAndView(data, "change.hbs");
 
         }, new HandlebarsTemplateEngine());
